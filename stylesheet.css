@@ -70,9 +70,19 @@ div.hoverDiv {
 	height:40px;
 }
 
+div.hoverDiv button.closeButton {
+	position:absolute;
+	right:5px;
+	top:5px;
+	width:30px;
+	height:30px;
+	display:none;
+}
+
 div.hoverDiv:hover {
-	box-sizing:border-box;
-	border-top-style: solid;
-	border-top-color: red;
-	border-top-width: 40px;
+	background-color:red;
+}
+
+div.hoverDiv:hover button.closeButton {
+	display:inline;
 }
