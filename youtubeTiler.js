@@ -1,13 +1,10 @@
 $(function() {
 	/* when window is resized also resize the main according to the aspect ratio of a 16:9 video */
 	$(window).resize(function(){
-		var windowWidth = $(window).width();
-		var windowHeight = $(window).height();
-		
-		var areaHeight = Math.min(windowWidth * (9/16),windowHeight);
-		
-		$("#main").height(areaHeight);
+		resizeArea();
 	});
+	/* also do this at first as well */
+	resizeArea();
 
 	/* add pause code */
 	$("#pauseButton").click(function() {
@@ -47,9 +44,11 @@ $(function() {
 		/* mousedown and up code from http://jsfiddle.net/JLTVS/2/ */
 		.mousedown(function() {
 			$(this).find("div.mask").show();
+			$("div.youtubePane").css({"z-index":1});
+			$(this).css({"z-index":2});
 		})
 		.mouseup(function() {
-			$(this).find("div.mask").hide();
+			$("div.mask").hide();
 		})
 		.draggable({containment: "parent"})
 		.resizable({containment: "parent"});
@@ -96,3 +95,13 @@ $(function() {
 		});
 	});
 });
+
+function resizeArea()
+{
+	var windowWidth = $(window).width();
+	var windowHeight = $(window).height();
+	
+	var areaHeight = Math.min(Math.max(windowWidth * (9/16), windowHeight - parseInt($("#header").css("height"),10)), windowHeight);
+	
+	$("#main").height(areaHeight);
+}
