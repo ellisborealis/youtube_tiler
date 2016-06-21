@@ -4,22 +4,25 @@
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<!-- clock code taken from https://www.sitepoint.com/create-jquery-digital-clock-jquery4u/ -->
+	<script src="digitalClock.js"></script>
 	<!-- youtube sanitizer https://gist.github.com/takien/4077195 -->
 	<script src="youtubeID.js"></script>
 	<!-- context menu taken from https://github.com/swisnl/jQuery-contextMenu -->
 	<link rel="stylesheet" href="jQuery-contextMenu/jquery.contextMenu.min.css" type="text/css" media="screen">
 	<script type="text/javascript" src="jQuery-contextMenu/jquery.ui.position.min.js"></script>
 	<script type="text/javascript" src="jQuery-contextMenu/jquery.contextMenu.min.js"></script>
-	<!-- "original" js and css code here -->
+	<!-- js and css code that i wrote here -->
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script src="youtubeTiler.js"></script>
-	<!--  end "original" code -->
+	<!-- end code that i wrote -->
 </head>
 <body>
 	<div id="header">
 		<h1 id="mainHeader">YouTube Video Tiler</h1>
 		<h2 id="clock"></h2>
 		<button type="button" id="addButton">Add Video</button>
+		<button type="button" id="pauseButton">Pause All Videos</button>
 		<input type="text" name="FirstName" id="urlBox" value="https://www.youtube.com/embed/TaFfgYj8VQg">
 	</div>
 	<div id="main">

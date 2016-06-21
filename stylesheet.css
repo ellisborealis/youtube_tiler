@@ -30,6 +30,13 @@ body {
 	z-index:3;
 }
 
+#pauseButton {
+	position:absolute;
+	top:0;
+	left:500;
+	z-index:3;
+}
+
 #urlBox {
 	position:absolute;
 	top:0;
@@ -90,6 +97,7 @@ div.hoverDiv button.closeButton {
 	width:30px;
 	height:30px;
 	display:none;
+	z-index:10;
 }
 
 div.hoverDiv:hover {
