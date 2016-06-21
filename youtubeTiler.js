@@ -24,17 +24,21 @@ $(function() {
 
 	/* add video code */
 	$("#addButton").click(function () {
-		var directValue = $("#urlBox").val();
-		var youtubeId = YouTubeGetID(directValue);
-		if(youtubeId.length == 0)
+		var directValue = $("#urlBox").val().split(";");
+
+		for(dIdx in directValue)
 		{
-			return;
+			var youtubeId = YouTubeGetID(directValue[dIdx]);
+			if(youtubeId.length == 0 || directValue[dIdx].length == 0)
+			{
+				return;
+			}
+			var codeString = '';
+			codeString = codeString.concat('<div class="youtubePane" style="width:800px;height:450px;left:200px;top:200px;"><div class="hoverDiv context-menu-one btn btn-neutral"><button type="button" class="closeButton">X</button></div><div class="mask"></div><iframe style="width:100%; height:100%;" src="https://www.youtube.com/embed/');
+			codeString = codeString.concat(youtubeId);
+			codeString = codeString.concat('" frameborder="0"></iframe></div>');
+			$("#main").append(codeString);
 		}
-		var codeString = '';
-		codeString = codeString.concat('<div class="youtubePane" style="width:800px;height:450px;left:200px;top:200px;"><div class="hoverDiv context-menu-one btn btn-neutral"><button type="button" class="closeButton">X</button></div><div class="mask"></div><iframe style="width:100%; height:100%;" src="https://www.youtube.com/embed/');
-		codeString = codeString.concat(youtubeId);
-		codeString = codeString.concat('" frameborder="0"></iframe></div>');
-		$("#main").append(codeString);
 	});
 
 	/* run this code AFTER every button press */
