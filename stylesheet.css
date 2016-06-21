@@ -64,10 +64,15 @@ div.youtubePane {
 	position:absolute;
 }
 
-div.youtubePane:hover
-{
+div.hoverDiv {
+	position:absolute;
+	width:100%;
+	height:40px;
+}
+
+div.hoverDiv:hover {
 	box-sizing:border-box;
 	border-top-style: solid;
 	border-top-color: red;
-	border-top-width: 20px;
+	border-top-width: 40px;
 }
