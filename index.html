@@ -6,17 +6,23 @@
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<!-- youtube sanitizer https://gist.github.com/takien/4077195 -->
 	<script src="youtubeID.js"></script>
+	<!-- context menu taken from https://github.com/swisnl/jQuery-contextMenu -->
+	<link rel="stylesheet" href="jQuery-contextMenu/jquery.contextMenu.min.css" type="text/css" media="screen">
+	<script type="text/javascript" src="jQuery-contextMenu/jquery.ui.position.min.js"></script>
+	<script type="text/javascript" src="jQuery-contextMenu/jquery.contextMenu.min.js"></script>
 	<!-- "original" js and css code here -->
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script src="youtubeTiler.js"></script>
 	<!--  end "original" code -->
 </head>
 <body>
-	<div id="main">
+	<div id="header">
 		<h1 id="mainHeader">YouTube Video Tiler</h1>
 		<h2 id="clock"></h2>
 		<button type="button" id="addButton">Add Video</button>
 		<input type="text" name="FirstName" id="urlBox" value="https://www.youtube.com/embed/TaFfgYj8VQg">
+	</div>
+	<div id="main">
 	</div>
 </body>
 </html>
