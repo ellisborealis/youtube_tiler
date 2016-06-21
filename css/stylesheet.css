@@ -5,7 +5,7 @@
 
 body {
 	overflow:hidden;
-	background-image:url("landscape-mountains-background.jpg");
+	background-image:url("../img/landscape-mountains-background.jpg");
 	background-repeat:no-repeat;
 	background-size: 100% auto;
 }
