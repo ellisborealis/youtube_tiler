@@ -42,10 +42,10 @@ $(function() {
 		$( "div.youtubePane" )
 		/* mousedown and up code from http://jsfiddle.net/JLTVS/2/ */
 		.mousedown(function() {
-			$('div.mask').show();
+			$(this).find("div.mask").show();
 		})
 		.mouseup(function() {
-			$('div.mask').hide();
+			$(this).find("div.mask").hide();
 		})
 		.draggable({containment: "parent"})
 		.resizable({containment: "parent"});
