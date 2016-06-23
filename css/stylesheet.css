@@ -8,6 +8,7 @@ body {
 	background-image:url("../img/landscape-mountains-background.jpg");
 	background-repeat:no-repeat;
 	background-size: 100% auto;
+	font-family:Arial;
 }
 
 #header {
@@ -51,9 +52,8 @@ body {
 #mainHeader {
 	position:absolute;
 	right:10px;
-	bottom:10px;
+	bottom:5px;
 	font-size:60px;
-	font-family:Georgia;
 	text-align:center;
 	color:#ffffff;
 	font-weight:bold;
@@ -63,9 +63,8 @@ body {
 #clock {
 	position:absolute;
 	left:10px;
-	bottom:10px;
+	bottom:5px;
 	font-size:45px;
-	font-family:Georgia;
 	text-align:center;
 	color:#ffffff;
 	font-weight:bold;
