@@ -39,61 +39,11 @@ $(function() {
 	});
 
 	/* run this code AFTER every button press */
-	$( "#addButton" ).on("click", function() {
-		$( "div.youtubePane" )
-		/* mousedown and up code from http://jsfiddle.net/JLTVS/2/ */
-		.mousedown(function() {
-			$(this).find("div.mask").show();
-			$("div.youtubePane").css({"z-index":1});
-			$(this).css({"z-index":2});
-		})
-		.mouseup(function() {
-			$("div.mask").hide();
-		})
-		.draggable({containment: "parent"})
-		.resizable({containment: "parent"});
-
-		/* close button code */
-		$( "button.closeButton" )
-		.click(function() {
-			this.parentNode.parentNode.remove();
-		});
-
-		/* context menu for moving videos around the screen */
-		$.contextMenu({
-			selector: '.context-menu-one', 
-			callback: function(key, options) {
-				if(key == "bl")
-				{
-					this.parent().css({'width': '50%', 'height': '50%', 'top': 'auto', 'right': 'auto', 'bottom': '0px', 'left': '0px'});
-				}
-				if(key == "br")
-				{
-					this.parent().css({'width': '50%', 'height': '50%', 'top': 'auto', 'right': '0px', 'bottom': '0px', 'left': 'auto'});
-				}
-				if(key == "tl")
-				{
-					this.parent().css({'width': '50%', 'height': '50%', 'top': '0px', 'right': 'auto', 'bottom': 'auto', 'left': '0px'});
-				}
-				if(key == "tr")
-				{
-					this.parent().css({'width': '50%', 'height': '50%', 'top': '0px', 'right': '0px', 'bottom': 'auto', 'left': 'auto'});
-				}
-				if(key == "fs")
-				{
-					this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px', 'left': '0px'});
-				}
-			},
-			items: {
-				"bl": {name: "Bottom Left"},
-				"br": {name: "Bottom Right"},
-				"tl": {name: "Top Left"},
-				"tr": {name: "Top Right"},
-				"sep1": "---------",
-				"fs": {name: "Full Screen"}
-			}
-		});
+	$( "#addButton" ).on("click", function(){
+		updateAllVideos();
 	});
+
+	updateAllVideos();
 });
 
 function resizeArea()
@@ -104,4 +54,61 @@ function resizeArea()
 	var areaHeight = Math.min(Math.max(windowWidth * (9/16), windowHeight - parseInt($("#header").css("height"),10)), windowHeight);
 	
 	$("#main").height(areaHeight);
+}
+
+function updateAllVideos()
+{
+	$( "div.youtubePane" )
+	/* mousedown and up code from http://jsfiddle.net/JLTVS/2/ */
+	.mousedown(function() {
+		$(this).find("div.mask").show();
+		$("div.youtubePane").css({"z-index":1});
+		$(this).css({"z-index":2});
+	})
+	.mouseup(function() {
+		$("div.mask").hide();
+	})
+	.draggable({containment: "parent"})
+	.resizable({containment: "parent"});
+
+	/* close button code */
+	$( "button.closeButton" )
+	.click(function() {
+		this.parentNode.parentNode.remove();
+	});
+
+	/* context menu for moving videos around the screen */
+	$.contextMenu({
+		selector: '.context-menu-one', 
+		callback: function(key, options) {
+			if(key == "bl")
+			{
+				this.parent().css({'width': '50%', 'height': '50%', 'top': 'auto', 'right': 'auto', 'bottom': '0px', 'left': '0px'});
+			}
+			if(key == "br")
+			{
+				this.parent().css({'width': '50%', 'height': '50%', 'top': 'auto', 'right': '0px', 'bottom': '0px', 'left': 'auto'});
+			}
+			if(key == "tl")
+			{
+				this.parent().css({'width': '50%', 'height': '50%', 'top': '0px', 'right': 'auto', 'bottom': 'auto', 'left': '0px'});
+			}
+			if(key == "tr")
+			{
+				this.parent().css({'width': '50%', 'height': '50%', 'top': '0px', 'right': '0px', 'bottom': 'auto', 'left': 'auto'});
+			}
+			if(key == "fs")
+			{
+				this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px', 'left': '0px'});
+			}
+		},
+		items: {
+			"bl": {name: "Bottom Left"},
+			"br": {name: "Bottom Right"},
+			"tl": {name: "Top Left"},
+			"tr": {name: "Top Right"},
+			"sep1": "---------",
+			"fs": {name: "Full Screen"}
+		}
+	});
 }
