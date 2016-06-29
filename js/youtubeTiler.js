@@ -61,7 +61,7 @@ function updateAllVideos()
 	$( "div.youtubePane" )
 	/* mousedown and up code from http://jsfiddle.net/JLTVS/2/ */
 	.mousedown(function() {
-		$(this).find("div.mask").show();
+		$("div.mask").show();
 		$("div.youtubePane").css({"z-index":1});
 		$(this).css({"z-index":2});
 	})
@@ -81,26 +81,22 @@ function updateAllVideos()
 	$.contextMenu({
 		selector: '.context-menu-one', 
 		callback: function(key, options) {
-			if(key == "bl")
-			{
-				this.parent().css({'width': '50%', 'height': '50%', 'top': 'auto', 'right': 'auto', 'bottom': '0px', 'left': '0px'});
-			}
-			if(key == "br")
-			{
-				this.parent().css({'width': '50%', 'height': '50%', 'top': 'auto', 'right': '0px', 'bottom': '0px', 'left': 'auto'});
-			}
-			if(key == "tl")
-			{
-				this.parent().css({'width': '50%', 'height': '50%', 'top': '0px', 'right': 'auto', 'bottom': 'auto', 'left': '0px'});
-			}
-			if(key == "tr")
-			{
-				this.parent().css({'width': '50%', 'height': '50%', 'top': '0px', 'right': '0px', 'bottom': 'auto', 'left': 'auto'});
-			}
-			if(key == "fs")
-			{
-				this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px', 'left': '0px'});
-			}
+			if(key == "bl") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' }); }
+			if(key == "br") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': 'auto', 'right': '0px',  'bottom': '0px',  'left': 'auto'}); }
+			if(key == "tl") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': '0px',  'right': 'auto', 'bottom': 'auto', 'left': '0px' }); }
+			if(key == "tr") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': '0px',  'right': '0px',  'bottom': 'auto', 'left': 'auto'}); }
+
+			if(key == "t11") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '0px', 'right': 'auto',    'bottom': '0px',  'left': '0px'    }); }
+			if(key == "t12") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '0px', 'right': '33.333%', 'bottom': '0px',  'left': '33.333%'}); }
+			if(key == "t13") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '0px', 'right': '0px',     'bottom': 'auto', 'left': 'auto'   }); }
+			if(key == "t21") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '33.333%', 'right': 'auto',    'bottom': '33.333%', 'left': '0px'    }); }
+			if(key == "t22") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '33.333%', 'right': '33.333%', 'bottom': '33.333%', 'left': '33.333%'}); }
+			if(key == "t23") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '33.333%', 'right': '0px',     'bottom': '33.333%', 'left': 'auto'   }); }
+			if(key == "t31") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': 'auto',    'bottom': '0px', 'left': '0px'    }); }
+			if(key == "t32") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': '33.333%', 'bottom': '0px', 'left': '33.333%'}); }
+			if(key == "t33") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': '0px',     'bottom': '0px', 'left': 'auto'   }); }
+
+			if(key == "fs") { this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' }); }
 		},
 		items: {
 			"bl": {name: "Bottom Left"},
@@ -108,6 +104,16 @@ function updateAllVideos()
 			"tl": {name: "Top Left"},
 			"tr": {name: "Top Right"},
 			"sep1": "---------",
+			"t11": {name: "Thirds (1,1)"},
+			"t12": {name: "Thirds (1,2)"},
+			"t13": {name: "Thirds (1,3)"},
+			"t21": {name: "Thirds (2,1)"},
+			"t22": {name: "Thirds (2,2)"},
+			"t23": {name: "Thirds (2,3)"},
+			"t31": {name: "Thirds (1,1)"},
+			"t32": {name: "Thirds (1,2)"},
+			"t33": {name: "Thirds (3,3)"},
+			"sep2": "---------",
 			"fs": {name: "Full Screen"}
 		}
 	});
