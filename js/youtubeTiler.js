@@ -110,8 +110,8 @@ function updateAllVideos()
 			"t21": {name: "Thirds (2,1)"},
 			"t22": {name: "Thirds (2,2)"},
 			"t23": {name: "Thirds (2,3)"},
-			"t31": {name: "Thirds (1,1)"},
-			"t32": {name: "Thirds (1,2)"},
+			"t31": {name: "Thirds (3,1)"},
+			"t32": {name: "Thirds (3,2)"},
 			"t33": {name: "Thirds (3,3)"},
 			"sep2": "---------",
 			"fs": {name: "Full Screen"}
