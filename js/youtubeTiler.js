@@ -97,6 +97,8 @@ function updateAllVideos()
 			if(key == "t33") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': '0px',     'bottom': '0px', 'left': 'auto'   }); }
 
 			if(key == "fs") { this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' }); }
+
+			if(key == "sb") { this.parent().css({'z-index': '1'}); }
 		},
 		items: {
 			"bl": {name: "Bottom Left"},
@@ -114,7 +116,9 @@ function updateAllVideos()
 			"t32": {name: "Thirds (3,2)"},
 			"t33": {name: "Thirds (3,3)"},
 			"sep2": "---------",
-			"fs": {name: "Full Screen"}
+			"fs": {name: "Full Screen"},
+			"sep3": "---------",
+			"sb": {name: "Send To Back"}
 		}
 	});
 }
