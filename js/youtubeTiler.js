@@ -22,19 +22,35 @@ $(function() {
 	/* add video code */
 	$("#addButton").click(function () {
 		var directValue = $("#urlBox").val().split(";");
-
 		for(dIdx in directValue)
-		{
-			var youtubeId = YouTubeGetID(directValue[dIdx]);
-			if(youtubeId.length == 0 || directValue[dIdx].length == 0)
-			{
+		{	var d_val = directValue[dIdx]
+			// This would stop the functionality where you could put only a youtube ID in. do you care?
+			if (d_val.includes("youtube") || d_val.includes("ytimg")){ 
+				var youtubeId = YouTubeGetID(d_val);
+				if(youtubeId.length == 0 || directValue[dIdx].length == 0)
+				{
+					return;
+				}
+				var codeString = '';
+				codeString = codeString.concat('<div class="youtubePane" style="width:800px;height:450px;left:200px;top:200px;"><div class="hoverDiv context-menu-one btn btn-neutral"><button type="button" class="closeButton">X</button></div><div class="mask"></div><iframe style="width:100%; height:100%;" src="https://www.youtube.com/embed/');
+				codeString = codeString.concat(youtubeId);
+				codeString = codeString.concat('" frameborder="0"></iframe></div>');
+				$("#main").append(codeString);	
+			} else if (d_val.includes("twitch")){
+				var twitchID = TwitchGetID(d_val);
+				if(twitchID.length == 0 || twitchID[dIdx].length == 0)
+				{
+					return;
+				}
+				var codeString = '';
+				codeString = codeString.concat('<div class="youtubePane" style="width:800px;height:450px;left:200px;top:200px;"><div class="hoverDiv context-menu-one btn btn-neutral"><button type="button" class="closeButton">X</button></div><div class="mask"></div><iframe style="width:100%; height:100%;" src="https://player.twitch.tv/?channel=');
+				codeString = codeString.concat(twitchID);
+				codeString = codeString.concat('" frameborder="0"></iframe></div>');
+				$("#main").append(codeString);	
+			} else {
 				return;
 			}
-			var codeString = '';
-			codeString = codeString.concat('<div class="youtubePane" style="width:800px;height:450px;left:200px;top:200px;"><div class="hoverDiv context-menu-one btn btn-neutral"><button type="button" class="closeButton">X</button></div><div class="mask"></div><iframe style="width:100%; height:100%;" src="https://www.youtube.com/embed/');
-			codeString = codeString.concat(youtubeId);
-			codeString = codeString.concat('" frameborder="0"></iframe></div>');
-			$("#main").append(codeString);
+			
 		}
 	});
 
