@@ -149,7 +149,7 @@ function updateAllVideos()
 			"fs": {name: "Full Screen"},
 			"sep3": "---------",
 			"big-boy": {name: "Swap with Full Screen"},
-			"sep3": "---------",
+			"sep4": "---------",
 			"sb": {name: "Send To Back"}
 		}
 	});
