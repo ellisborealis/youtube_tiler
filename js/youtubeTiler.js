@@ -78,8 +78,20 @@ function updateAllVideos()
 	/* mousedown and up code from http://jsfiddle.net/JLTVS/2/ */
 	.mousedown(function() {
 		$("div.mask").show();
-		$("div.youtubePane").css({"z-index":1});
-		$(this).css({"z-index":2});
+    $(this).css({"z-index":1000});
+    let divs = document.getElementsByClassName("youtubePane");
+    let size = divs.length;
+    let zIndices = [];
+    for(let divIdx = 0; divIdx < divs.length; divIdx++) {
+      let zIndex = divs[divIdx].style.zIndex;
+      zIndices.push({'index':divIdx,'zIndex':Number(zIndex),});
+    }
+    let sortedIndices = zIndices.sort((a, b) => (a.zIndex > b.zIndex) ? 1 : ((b.zIndex > a.zIndex) ? -1 : 0));
+    let setIndex = 1;
+    for(let index of sortedIndices) {
+      $(divs[index.index]).css({'z-index':setIndex});
+      setIndex += 1;
+    }
 	})
 	.mouseup(function() {
 		$("div.mask").hide();
@@ -121,6 +133,7 @@ function updateAllVideos()
         for(let pane of panes) {
           if(pane.hasAttribute('big-boy')) {
             $(pane).css(oldStyle);
+            $(pane).css({'z-index':'1'});
             pane.removeAttribute('big-boy');
           }
         }
@@ -128,7 +141,7 @@ function updateAllVideos()
         this.parent().attr('big-boy','');
       }
 
-			if(key == "sb") { this.parent().css({'z-index': '1'}); }
+			if(key == "sb") { this.parent().css({'z-index': '0'}); }
 		},
 		items: {
 			"bl": {name: "Bottom Left"},

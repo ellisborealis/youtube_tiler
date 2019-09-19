@@ -97,8 +97,8 @@ iframe {
 }
 
 div.youtubePane {
-	min-width:400px;
-	min-height:225px;
+	min-width:320px;
+	min-height:180px;
 	position:absolute;
 }
 
