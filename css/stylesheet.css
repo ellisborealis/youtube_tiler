@@ -30,14 +30,14 @@ body {
 	position:absolute;
 	top:0;
 	left:350px;
-	z-index:3;
+	z-index:1;
 }
 
 #pauseButton {
 	position:absolute;
 	top:0;
 	left:500;
-	z-index:3;
+	z-index:1;
 }
 
 #urlBox {
@@ -45,7 +45,14 @@ body {
 	top:0;
 	left:0;
 	width:350px;
-	z-index:3;
+	z-index:1;
+}
+
+.location {
+  color:#ffffff;
+  font-weight:bold;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
 
 #mainHeader {
@@ -56,6 +63,8 @@ body {
 	text-align:center;
 	color:#ffffff;
 	font-weight:bold;
+    background-color:rgba(0, 0, 0, 0);
+    border:none;
    -webkit-text-stroke-width: 2px;
    -webkit-text-stroke-color: black;
 }

@@ -113,6 +113,20 @@ function updateAllVideos()
 			if(key == "t33") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': '0px',     'bottom': '0px', 'left': 'auto'   }); }
 
 			if(key == "fs") { this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' }); }
+      
+      if(key == "big-boy") { 
+        let oldStyle = this.parent().css(['width','height','top','right','bottom','left']);
+        this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' });
+        let panes = document.getElementsByClassName('youtubePane');
+        for(let pane of panes) {
+          if(pane.hasAttribute('big-boy')) {
+            $(pane).css(oldStyle);
+            pane.removeAttribute('big-boy');
+          }
+        }
+        this.parent().css({'z-index':'0'});
+        this.parent().attr('big-boy','');
+      }
 
 			if(key == "sb") { this.parent().css({'z-index': '1'}); }
 		},
@@ -133,6 +147,8 @@ function updateAllVideos()
 			"t33": {name: "Thirds (3,3)"},
 			"sep2": "---------",
 			"fs": {name: "Full Screen"},
+			"sep3": "---------",
+			"big-boy": {name: "Swap with Full Screen"},
 			"sep3": "---------",
 			"sb": {name: "Send To Back"}
 		}
