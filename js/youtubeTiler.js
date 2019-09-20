@@ -87,7 +87,7 @@ function updateAllVideos()
       zIndices.push({'index':divIdx,'zIndex':Number(zIndex),});
     }
     let sortedIndices = zIndices.sort((a, b) => (a.zIndex > b.zIndex) ? 1 : ((b.zIndex > a.zIndex) ? -1 : 0));
-    let setIndex = 1;
+    let setIndex = 2;
     for(let index of sortedIndices) {
       $(divs[index.index]).css({'z-index':setIndex});
       setIndex += 1;
@@ -109,23 +109,32 @@ function updateAllVideos()
 	$.contextMenu({
 		selector: '.context-menu-one', 
 		callback: function(key, options) {
-			if(key == "bl") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' }); }
-			if(key == "br") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': 'auto', 'right': '0px',  'bottom': '0px',  'left': 'auto'}); }
-			if(key == "tl") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': '0px',  'right': 'auto', 'bottom': 'auto', 'left': '0px' }); }
-			if(key == "tr") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': '0px',  'right': '0px',  'bottom': 'auto', 'left': 'auto'}); }
+			if(key == "bl") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' }); this.parent().removeAttr('big-boy');}
+			if(key == "br") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': 'auto', 'right': '0px',  'bottom': '0px',  'left': 'auto'}); this.parent().removeAttr('big-boy');}
+			if(key == "tl") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': '0px',  'right': 'auto', 'bottom': 'auto', 'left': '0px' }); this.parent().removeAttr('big-boy');}
+			if(key == "tr") { this.parent().css({'width':  '50%', 'height':  '50%', 'top': '0px',  'right': '0px',  'bottom': 'auto', 'left': 'auto'}); this.parent().removeAttr('big-boy');}
 
-			if(key == "t11") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '0px', 'right': 'auto',    'bottom': '0px',  'left': '0px'    }); }
-			if(key == "t12") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '0px', 'right': '33.333%', 'bottom': '0px',  'left': '33.333%'}); }
-			if(key == "t13") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '0px', 'right': '0px',     'bottom': 'auto', 'left': 'auto'   }); }
-			if(key == "t21") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '33.333%', 'right': 'auto',    'bottom': '33.333%', 'left': '0px'    }); }
-			if(key == "t22") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '33.333%', 'right': '33.333%', 'bottom': '33.333%', 'left': '33.333%'}); }
-			if(key == "t23") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '33.333%', 'right': '0px',     'bottom': '33.333%', 'left': 'auto'   }); }
-			if(key == "t31") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': 'auto',    'bottom': '0px', 'left': '0px'    }); }
-			if(key == "t32") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': '33.333%', 'bottom': '0px', 'left': '33.333%'}); }
-			if(key == "t33") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': '0px',     'bottom': '0px', 'left': 'auto'   }); }
+			if(key == "t11") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '0px', 'right': 'auto',    'bottom': '0px',  'left': '0px'    }); this.parent().removeAttr('big-boy');}
+			if(key == "t12") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '0px', 'right': '33.333%', 'bottom': '0px',  'left': '33.333%'}); this.parent().removeAttr('big-boy');}
+			if(key == "t13") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '0px', 'right': '0px',     'bottom': 'auto', 'left': 'auto'   }); this.parent().removeAttr('big-boy');}
+			if(key == "t21") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '33.333%', 'right': 'auto',    'bottom': '33.333%', 'left': '0px'    }); this.parent().removeAttr('big-boy');}
+			if(key == "t22") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '33.333%', 'right': '33.333%', 'bottom': '33.333%', 'left': '33.333%'}); this.parent().removeAttr('big-boy');}
+			if(key == "t23") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': '33.333%', 'right': '0px',     'bottom': '33.333%', 'left': 'auto'   }); this.parent().removeAttr('big-boy');}
+			if(key == "t31") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': 'auto',    'bottom': '0px', 'left': '0px'    }); this.parent().removeAttr('big-boy');}
+			if(key == "t32") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': '33.333%', 'bottom': '0px', 'left': '33.333%'}); this.parent().removeAttr('big-boy');}
+			if(key == "t33") { this.parent().css({'width':  '33.333%', 'height':  '33.333%', 'top': 'auto', 'right': '0px',     'bottom': '0px', 'left': 'auto'   }); this.parent().removeAttr('big-boy');}
 
-			if(key == "fs") { this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' }); }
-      
+			if(key == "fs") { 
+        this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' });
+        let panes = document.getElementsByClassName('youtubePane');
+        for(let pane of panes) {
+          if(pane.hasAttribute('big-boy')) {
+            pane.removeAttribute('big-boy');
+          }
+        }
+        this.parent().attr('big-boy','');
+      }
+
       if(key == "big-boy") { 
         let oldStyle = this.parent().css(['width','height','top','right','bottom','left']);
         this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' });
@@ -133,15 +142,15 @@ function updateAllVideos()
         for(let pane of panes) {
           if(pane.hasAttribute('big-boy')) {
             $(pane).css(oldStyle);
-            $(pane).css({'z-index':'1'});
+            $(pane).css({'z-index':'2'});
             pane.removeAttribute('big-boy');
           }
         }
-        this.parent().css({'z-index':'0'});
+        this.parent().css({'z-index':'1'});
         this.parent().attr('big-boy','');
       }
 
-			if(key == "sb") { this.parent().css({'z-index': '0'}); }
+			if(key == "sb") { this.parent().css({'z-index': '1'}); }
 		},
 		items: {
 			"bl": {name: "Bottom Left"},
