@@ -136,13 +136,12 @@ function updateAllVideos()
       }
 
       if(key == "big-boy") { 
-        let oldStyle = this.parent().css(['width','height','top','right','bottom','left']);
+        let oldStyle = this.parent().css(['width','height','top','right','bottom','left','z-index']);
         this.parent().css({'width': '100%', 'height': '100%', 'top': 'auto', 'right': 'auto', 'bottom': '0px',  'left': '0px' });
         let panes = document.getElementsByClassName('youtubePane');
         for(let pane of panes) {
           if(pane.hasAttribute('big-boy')) {
             $(pane).css(oldStyle);
-            $(pane).css({'z-index':'2'});
             pane.removeAttribute('big-boy');
           }
         }
