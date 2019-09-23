@@ -78,9 +78,9 @@ function updateAllVideos()
 	/* mousedown and up code from http://jsfiddle.net/JLTVS/2/ */
 	.mousedown(function() {
 		$("div.mask").show();
-    $(this).css({"z-index":1000});
     let divs = document.getElementsByClassName("youtubePane");
     let size = divs.length;
+    $(this).css({"z-index":size + 2});
     let zIndices = [];
     for(let divIdx = 0; divIdx < divs.length; divIdx++) {
       let zIndex = divs[divIdx].style.zIndex;
