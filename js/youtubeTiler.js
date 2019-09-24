@@ -34,7 +34,7 @@ $(function() {
 				var codeString = '';
 				codeString = codeString.concat('<div class="youtubePane" style="width:800px;height:450px;left:200px;top:200px;"><div class="hoverDiv context-menu-one btn btn-neutral"><button type="button" class="closeButton">X</button></div><div class="mask"></div><iframe style="width:100%; height:100%;" src="https://www.youtube.com/embed/');
 				codeString = codeString.concat(youtubeId);
-				codeString = codeString.concat('" frameborder="0"></iframe></div>');
+				codeString = codeString.concat('?autoplay=1&mute=1" frameborder="0"></iframe></div>');
 				$("#main").append(codeString);	
 			} else if (d_val.includes("twitch")){
 				var twitchID = TwitchGetID(d_val);
